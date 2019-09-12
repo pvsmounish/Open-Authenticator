@@ -1,4 +1,4 @@
-package com.openauthentication;
+package com.mounishsai.openauthentication;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
