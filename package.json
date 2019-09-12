@@ -5,7 +5,11 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "android": "react-native run-android",
+    "android:complete": "cd android && gradlew clean && cd .. && react-native run-android",
+    "android:release": "react-native run-android --variant=release",
+    "android:build": "cd android && gradlew bundleRelease"
   },
   "dependencies": {
     "react": "16.8.6",
