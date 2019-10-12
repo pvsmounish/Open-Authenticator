@@ -3,9 +3,9 @@ import {
     StyleSheet,
     ScrollView,
 } from 'react-native';
+import { Appbar, FAB, Portal } from 'react-native-paper';
 
-import { Appbar, Button, Card, Title, Paragraph, FAB, Portal } from 'react-native-paper';
-
+import { ServiceCodeCard } from '../../components';
 import { colors } from '../../styles';
 
 const services = [
@@ -40,16 +40,8 @@ class HomeScreen extends Component {
                     contentContainerStyle={styles.content}
                 >
                     {
-                        services.map(({ code, serviceName, serviceAccount }) => (
-                            <Card style={styles.card} key={serviceName+serviceAccount}>
-                                <Card.Content>
-                                    <Title>{ code }</Title>
-                                    <Paragraph>{ serviceName || '-' } ({ serviceAccount || '-' })</Paragraph>
-                                </Card.Content>
-                                <Card.Actions>
-                                    <Button>Copy</Button>
-                                </Card.Actions>
-                            </Card>
+                        services.map((serviceCode, { serviceName, serviceAccount }) => (
+                            <ServiceCodeCard {...serviceCode} key={serviceName+serviceAccount} />
                         ))
                     }
                     
