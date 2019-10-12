@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "OpenAuthentication-tvOS.app"
-               BlueprintName = "OpenAuthentication-tvOS"
-               ReferencedContainer = "container:OpenAuthentication.xcodeproj">
+               BuildableName = "OpenAuthenticator-tvOS.app"
+               BlueprintName = "OpenAuthenticator-tvOS"
+               ReferencedContainer = "container:OpenAuthenticator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "OpenAuthentication-tvOSTests.xctest"
-               BlueprintName = "OpenAuthentication-tvOSTests"
-               ReferencedContainer = "container:OpenAuthentication.xcodeproj">
+               BuildableName = "OpenAuthenticator-tvOSTests.xctest"
+               BlueprintName = "OpenAuthenticator-tvOSTests"
+               ReferencedContainer = "container:OpenAuthenticator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "OpenAuthentication-tvOSTests.xctest"
-               BlueprintName = "OpenAuthentication-tvOSTests"
-               ReferencedContainer = "container:OpenAuthentication.xcodeproj">
+               BuildableName = "OpenAuthenticator-tvOSTests.xctest"
+               BlueprintName = "OpenAuthenticator-tvOSTests"
+               ReferencedContainer = "container:OpenAuthenticator.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "OpenAuthentication-tvOS.app"
-            BlueprintName = "OpenAuthentication-tvOS"
-            ReferencedContainer = "container:OpenAuthentication.xcodeproj">
+            BuildableName = "OpenAuthenticator-tvOS.app"
+            BlueprintName = "OpenAuthenticator-tvOS"
+            ReferencedContainer = "container:OpenAuthenticator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "OpenAuthentication-tvOS.app"
-            BlueprintName = "OpenAuthentication-tvOS"
-            ReferencedContainer = "container:OpenAuthentication.xcodeproj">
+            BuildableName = "OpenAuthenticator-tvOS.app"
+            BlueprintName = "OpenAuthenticator-tvOS"
+            ReferencedContainer = "container:OpenAuthenticator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "OpenAuthentication-tvOS.app"
-            BlueprintName = "OpenAuthentication-tvOS"
-            ReferencedContainer = "container:OpenAuthentication.xcodeproj">
+            BuildableName = "OpenAuthenticator-tvOS.app"
+            BlueprintName = "OpenAuthenticator-tvOS"
+            ReferencedContainer = "container:OpenAuthenticator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
