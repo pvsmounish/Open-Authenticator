@@ -4,7 +4,7 @@ import {
     ScrollView,
 } from 'react-native';
 
-import { Button, Card, Title, Paragraph, FAB, Portal } from 'react-native-paper';
+import { Appbar, Button, Card, Title, Paragraph, FAB, Portal } from 'react-native-paper';
 
 import { colors } from '../../styles';
 
@@ -30,6 +30,11 @@ class HomeScreen extends Component {
     render() {
         return (
             <>
+            <Appbar.Header>
+                <Appbar.Content
+                    title='Open Authenticator'
+                />
+            </Appbar.Header>
                 <ScrollView
                     style={[styles.container, { backgroundColor: colors.theme.lightGrey }]}
                     contentContainerStyle={styles.content}
