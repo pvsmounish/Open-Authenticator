@@ -3,9 +3,14 @@ import {
     StyleSheet,
     ScrollView,
 } from 'react-native';
-import { Appbar, FAB, Portal } from 'react-native-paper';
+import { 
+    Appbar,
+    FAB,
+    Modal,
+    Portal,
+} from 'react-native-paper';
 
-import { ServiceCodeCard } from '../../components';
+import { ServiceCodeCard, AddServiceManual } from '../../components';
 import { colors } from '../../styles';
 
 const services = [
@@ -25,9 +30,16 @@ class HomeScreen extends Component {
 
     state = {
         isFABOpen: false,
+        isAddServiceManualOpen: false,
     };
 
+    showAddServiceManualModel = () => this.setState({ isAddServiceManualOpen: true });
+    hideAddServiceManualModel = () => this.setState({ isAddServiceManualOpen: false });
+
     render() {
+
+        const { isAddServiceManualOpen } = this.state;
+
         return (
             <>
             <Appbar.Header>
@@ -41,17 +53,19 @@ class HomeScreen extends Component {
                 >
                     {
                         services.map((serviceCode) => (
-                            <ServiceCodeCard {...serviceCode} key={serviceCode.serviceName+serviceCode.serviceAccount} />
+                            <ServiceCodeCard {...serviceCode}
+                                key={serviceCode.serviceName+serviceCode.serviceAccount}
+                                style={styles.card}
+                            />
                         ))
                     }
-                    
                     <Portal>
                         <FAB.Group
                             open={this.state.isFABOpen}
                             icon={this.state.isFABOpen ? 'close' : 'add'}
                             actions={[
                                 { icon: 'qrcode', label: 'Scan QR', onPress: () => console.log('Scan QR') },
-                                { icon: 'text-short', label: 'Type', onPress: () => console.log('Type')},
+                                { icon: 'text-short', label: 'Type', onPress: () => this.showAddServiceManualModel() },
                             ]}
                             onStateChange={({ open }) => this.setState({ isFABOpen: open })}
                             onPress={() => {
@@ -62,6 +76,9 @@ class HomeScreen extends Component {
                         />
                     </Portal>
                 </ScrollView>
+                <Modal visible={isAddServiceManualOpen} onDismiss={this.hideAddServiceManualModel}>
+                    <AddServiceManual style={styles.card} />
+                </Modal>
             </>
         );
     }
