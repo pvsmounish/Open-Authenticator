@@ -16,22 +16,28 @@ class AddServiceManual extends Component {
     render() {
         return (
             <Card style={styles.card}>
+                <Card.Title title='Add Service (Manual)' />
                 <Card.Content>
                     <TextInput
                         label='Service Name'
                         mode='outlined'
+                        style={styles.textInput}
                         value={this.state.serviceName}
                         onChangeText={serviceName => this.setState({ serviceName })}
                     />
                     <TextInput
                         label='Service Account'
                         mode='outlined'
+                        style={styles.textInput}
                         value={this.state.serviceAccount}
                         onChangeText={serviceAccount => this.setState({ serviceAccount })}
                     />
                     <TextInput
                         label='Service Key'
                         mode='outlined'
+                        multiline={true}
+                        numberOfLines={4}
+                        style={styles.textInput}
                         value={this.state.serviceKey}
                         onChangeText={serviceKey => this.setState({ serviceKey })}
                     />
@@ -46,7 +52,10 @@ class AddServiceManual extends Component {
 
 const styles = StyleSheet.create({
     card: {
-        margin: 4,
+        margin: 8,
+    },
+    textInput: {
+        marginVertical: 2,
     },
 });
 
