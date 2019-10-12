@@ -1,4 +1,4 @@
-package com.mounishsai.openauthentication;
+package com.mounishsai.openauthenticator;
 
 import android.app.Application;
 import android.util.Log;
