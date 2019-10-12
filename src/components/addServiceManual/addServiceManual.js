@@ -25,13 +25,13 @@ class AddServiceManual extends Component {
                         value={this.state.serviceName}
                         onChangeText={serviceName => this.setState({ serviceName })}
                     />
-                    <TextInput
+                    {/* <TextInput
                         label='Service Account'
                         mode='outlined'
                         style={styles.textInput}
                         value={this.state.serviceAccount}
                         onChangeText={serviceAccount => this.setState({ serviceAccount })}
-                    />
+                    /> */}
                     <TextInput
                         label='Service Key'
                         mode='outlined'
