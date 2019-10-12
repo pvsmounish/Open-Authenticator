@@ -6,8 +6,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 import * as Screens from '../screens';
 
 const OpenAuthenticatorRoot = createStackNavigator({
-    Root: {
+    Home: {
         screen: Screens.HomeScreen,
+    },
+    AddService: {
+        screen: Screens.AddServiceScreen,
     },
 }, {
     headerMode: 'none',
