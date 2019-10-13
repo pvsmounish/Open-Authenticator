@@ -12,34 +12,27 @@ import {
 } from 'react-native-paper';
 
 import { ServiceCodeCard, AddServiceManual } from '../../components';
+import { getServices } from '../../utils';
 import { colors } from '../../styles';
-
-const services = [
-    {
-        code: '859 157',
-        serviceName: 'Google',
-        serviceAccount: 'me@example.com',
-    },
-    {
-        code: '859 157',
-        serviceName: 'Google',
-        serviceAccount: 'me2@example.com',
-    },
-]
 
 class HomeScreen extends Component {
 
     state = {
         isFABOpen: false,
         isAddServiceManualOpen: false,
+        services: [],
     };
+
+    async componentDidMount() {
+        await this.setState({ services: await getServices() });
+    }
 
     showAddServiceManualModel = () => this.setState({ isAddServiceManualOpen: true });
     hideAddServiceManualModel = () => this.setState({ isAddServiceManualOpen: false });
 
     render() {
 
-        const { isAddServiceManualOpen } = this.state;
+        const { isAddServiceManualOpen, services } = this.state;
 
         return (
             <>
