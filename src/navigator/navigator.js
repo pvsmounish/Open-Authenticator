@@ -9,8 +9,8 @@ const OpenAuthenticatorRoot = createStackNavigator({
     Home: {
         screen: Screens.HomeScreen,
     },
-    AddService: {
-        screen: Screens.AddServiceScreen,
+    AddServiceScan: {
+        screen: Screens.AddServiceScanScreen,
     },
 }, {
     headerMode: 'none',
