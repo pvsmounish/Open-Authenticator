@@ -39,22 +39,27 @@ const leftpad = (str, len, pad) => {
 
 export const getOTP = ({ secret }) => {
     
-    let key = base32tohex(secret);
-    let epoch = Math.round(new Date().getTime() / 1000.0);
-    let time = leftpad(dec2hex(Math.floor(epoch / 30)), 16, '0');
+    try {
+        let key = base32tohex(secret);
+        let epoch = Math.round(new Date().getTime() / 1000.0);
+        let time = leftpad(dec2hex(Math.floor(epoch / 30)), 16, '0');
 
-    const shaObj = new jsSHA('SHA-1', 'HEX');
-    shaObj.setHMACKey(key, 'HEX');
-    shaObj.update(time);
-    let hmac = shaObj.getHMAC('HEX');
+        const shaObj = new jsSHA('SHA-1', 'HEX');
+        shaObj.setHMACKey(key, 'HEX');
+        shaObj.update(time);
+        let hmac = shaObj.getHMAC('HEX');
 
 
-    let offset = hex2dec(hmac.substring(hmac.length - 1));
+        let offset = hex2dec(hmac.substring(hmac.length - 1));
 
-    let otp = (hex2dec(hmac.substr(offset * 2, 8)) & hex2dec('7fffffff')) + '';
-    otp = (otp).substr(otp.length - 6, 6);
+        let otp = (hex2dec(hmac.substr(offset * 2, 8)) & hex2dec('7fffffff')) + '';
+        otp = (otp).substr(otp.length - 6, 6);
 
-    return otp;
+        return otp;
+
+    } catch (error) {
+        return '-';
+    }
 }
 
 export const getCurrentCountDown = () => {
