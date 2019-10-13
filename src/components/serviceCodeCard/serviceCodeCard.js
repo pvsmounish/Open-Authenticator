@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    Clipboard,
     StyleSheet,
 } from 'react-native';
 
@@ -13,7 +14,7 @@ const ServiceCodeCard = ({ otp, name, account, countDown }) => {
                 <Paragraph>{ name || '-' } ({ account || '-' }) | Expires in { countDown } </Paragraph>
             </Card.Content>
             <Card.Actions>
-                <Button>Copy</Button>
+                <Button onPress={() => Clipboard.setString(otp)}>Copy</Button>
             </Card.Actions>
         </Card>
     )
