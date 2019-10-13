@@ -12,7 +12,7 @@ import {
 } from 'react-native-paper';
 
 import { ServiceCodeCard, AddServiceManual } from '../../components';
-import { getServices } from '../../utils';
+import { getServices, getOTP } from '../../utils';
 import { colors } from '../../styles';
 
 class HomeScreen extends Component {
@@ -23,8 +23,24 @@ class HomeScreen extends Component {
         services: [],
     };
 
+    updateOTPs = () => {
+        const servicesWithOTP = this.state.services;
+        servicesWithOTP.map((service) => {
+            return Object.assign(service, { otp: getOTP({ secret: service.secret }) } );
+        })
+        this.setState({ services: servicesWithOTP });
+    }
+
     async componentDidMount() {
         await this.setState({ services: await getServices() });
+        this.interval = setInterval(
+            () => this.updateOTPs(),
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     showAddServiceManualModel = () => this.setState({ isAddServiceManualOpen: true });
