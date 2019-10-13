@@ -12,6 +12,7 @@
     "android:build": "cd android && gradlew bundleRelease"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.2",
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-gesture-handler": "^1.4.1",
