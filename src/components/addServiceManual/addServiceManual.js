@@ -2,14 +2,23 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
 } from 'react-native';
+import { Button, Card, TextInput } from 'react-native-paper';
 
-import { Button, Card, TextInput, Title, Paragraph } from 'react-native-paper';
+import { addService, getQueryParams } from '../../utils';
 
 class AddServiceManual extends Component {
 
     state = {
-        serviceAccount: '',
-        serviceSecret: '',
+        account: '',
+        secretURI: '',
+    }
+
+    saveService = async () => {
+        const { account, secretURI } = this.state;
+        const { secret, issuer: name } = getQueryParams({ url: secretURI });
+        const { error } = await addService({ name, account, secret });
+        if(error)
+            console.log('Error while saving service')
     }
 
     render() {
@@ -21,8 +30,8 @@ class AddServiceManual extends Component {
                         label='Account Name'
                         mode='outlined'
                         style={styles.textInput}
-                        value={this.state.serviceAccount}
-                        onChangeText={serviceAccount => this.setState({ serviceAccount })}
+                        value={this.state.account}
+                        onChangeText={account => this.setState({ account })}
                     />
                     <TextInput
                         label='Service Secret'
@@ -30,12 +39,12 @@ class AddServiceManual extends Component {
                         multiline={true}
                         numberOfLines={4}
                         style={styles.textInput}
-                        value={this.state.serviceSecret}
-                        onChangeText={serviceSecret => this.setState({ serviceSecret })}
+                        value={this.state.secretURI}
+                        onChangeText={secretURI => this.setState({ secretURI })}
                     />
                 </Card.Content>
                 <Card.Actions>
-                    <Button>Save</Button>
+                    <Button onPress={this.saveService}>Save</Button>
                 </Card.Actions>
             </Card>
         )

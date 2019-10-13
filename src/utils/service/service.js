@@ -1,12 +1,12 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
-export const addService = async ({ name = '', secret = '', account = '' }) => {
+export const addService = async ({ name = '', account = '', secret = '' }) => {
     try {
         const services = await getServices();
         services.unshift({
             name,
-            secret,
             account,
+            secret,
         });
         await AsyncStorage.setItem('services', JSON.stringify(services));
         return { error: false };
