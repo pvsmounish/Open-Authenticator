@@ -102,7 +102,11 @@ class HomeScreen extends Component {
                     </Portal>
                 </ScrollView>
                 <Modal visible={isAddServiceManualOpen} onDismiss={this.hideAddServiceManualModel}>
-                    <AddServiceManual style={styles.card} refreshServices={this.getServices} />
+                    <AddServiceManual
+                        style={styles.card}
+                        refreshServices={this.getServices}
+                        hideAddServiceManualModel={this.hideAddServiceManualModel}
+                    />
                 </Modal>
             </>
         );
