@@ -1,9 +1,11 @@
 import AsyncStorage from '@react-native-community/async-storage';
+import { createUUID } from '../../utils';
 
 export const addService = async ({ name = '', account = '', secret = '' }) => {
     try {
         const services = await getServices();
         services.unshift({
+            id: createUUID(),
             name,
             account,
             secret,
