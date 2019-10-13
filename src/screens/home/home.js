@@ -74,7 +74,7 @@ class HomeScreen extends Component {
                     {
                         services.map((serviceCode) => (
                             <ServiceCodeCard {...serviceCode}
-                                key={serviceCode.name+serviceCode.account}
+                                key={serviceCode.id}
                                 style={styles.card}
                             />
                         ))
