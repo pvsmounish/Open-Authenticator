@@ -42,6 +42,11 @@ class HomeScreen extends Component {
             () => this.updateOTPs(),
             1000
         );
+         // Add willFocus listener to refresh services data after saving new service
+        const { navigation } = this.props;
+        this.focusListener = navigation.addListener('willFocus', async () => {
+            await this.getServices();
+        });
     }
 
     componentWillUnmount() {
