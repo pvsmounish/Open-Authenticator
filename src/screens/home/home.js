@@ -8,6 +8,7 @@ import {
     FAB,
     Modal,
     Portal,
+    Text,
 } from 'react-native-paper';
 
 import { ServiceCodeCard, AddServiceManual } from '../../components';
@@ -58,6 +59,11 @@ class HomeScreen extends Component {
                                 style={styles.card}
                             />
                         ))
+                    }
+                    {
+                        services && services.length === 0 && (
+                            <Text>No Services Found</Text>
+                        )
                     }
                     <Portal>
                         <FAB.Group
