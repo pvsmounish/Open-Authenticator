@@ -5,12 +5,12 @@ import {
 
 import { Button, Card, Title, Paragraph } from 'react-native-paper';
 
-const ServiceCodeCard = ({ otp, name, account }) => {
+const ServiceCodeCard = ({ otp, name, account, countDown }) => {
     return (
         <Card style={styles.card}>
             <Card.Content>
                 <Title>{ otp }</Title>
-                <Paragraph>{ name || '-' } ({ account || '-' })</Paragraph>
+                <Paragraph>{ name || '-' } ({ account || '-' }) | Expires in { countDown } </Paragraph>
             </Card.Content>
             <Card.Actions>
                 <Button>Copy</Button>
