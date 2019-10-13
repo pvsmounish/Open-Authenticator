@@ -19,6 +19,8 @@ class AddServiceManual extends Component {
         const { error } = await addService({ name, account, secret });
         if(error)
             console.log('Error while saving service')
+        else
+            this.props.refreshServices();
     }
 
     render() {

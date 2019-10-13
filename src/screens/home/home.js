@@ -32,8 +32,12 @@ class HomeScreen extends Component {
         this.setState({ services });
     }
 
-    async componentDidMount() {
+    getServices = async () => {
         await this.setState({ services: await getServices() });
+    }
+
+    async componentDidMount() {
+        await this.getServices();
         this.interval = setInterval(
             () => this.updateOTPs(),
             1000
@@ -93,7 +97,7 @@ class HomeScreen extends Component {
                     </Portal>
                 </ScrollView>
                 <Modal visible={isAddServiceManualOpen} onDismiss={this.hideAddServiceManualModel}>
-                    <AddServiceManual style={styles.card} />
+                    <AddServiceManual style={styles.card} refreshServices={this.getServices} />
                 </Modal>
             </>
         );
