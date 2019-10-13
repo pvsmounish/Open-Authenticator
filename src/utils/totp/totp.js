@@ -38,7 +38,7 @@ const leftpad = (str, len, pad) => {
 }
 
 export const getOTP = ({ secret }) => {
-            
+    
     let key = base32tohex(secret);
     let epoch = Math.round(new Date().getTime() / 1000.0);
     let time = leftpad(dec2hex(Math.floor(epoch / 30)), 16, '0');
@@ -55,4 +55,11 @@ export const getOTP = ({ secret }) => {
     otp = (otp).substr(otp.length - 6, 6);
 
     return otp;
+}
+
+export const getCurrentCountDown = () => {
+
+    const epoch = Math.round(new Date().getTime() / 1000.0);
+    const countDown = 30 - (epoch % 30);
+    return countDown;
 }
