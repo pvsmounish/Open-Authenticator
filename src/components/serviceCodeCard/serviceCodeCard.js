@@ -5,12 +5,12 @@ import {
 
 import { Button, Card, Title, Paragraph } from 'react-native-paper';
 
-const ServiceCodeCard = ({ code, serviceName, serviceAccount }) => {
+const ServiceCodeCard = ({ code, name, account }) => {
     return (
         <Card style={styles.card}>
             <Card.Content>
                 <Title>{ code }</Title>
-                <Paragraph>{ serviceName || '-' } ({ serviceAccount || '-' })</Paragraph>
+                <Paragraph>{ name || '-' } ({ account || '-' })</Paragraph>
             </Card.Content>
             <Card.Actions>
                 <Button>Copy</Button>
