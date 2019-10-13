@@ -8,9 +8,8 @@ import { Button, Card, TextInput, Title, Paragraph } from 'react-native-paper';
 class AddServiceManual extends Component {
 
     state = {
-        serviceName: '',
         serviceAccount: '',
-        serviceKey: '',
+        serviceSecret: '',
     }
 
     render() {
@@ -19,27 +18,20 @@ class AddServiceManual extends Component {
                 <Card.Title title='Add Service (Manual)' />
                 <Card.Content>
                     <TextInput
-                        label='Service Name'
-                        mode='outlined'
-                        style={styles.textInput}
-                        value={this.state.serviceName}
-                        onChangeText={serviceName => this.setState({ serviceName })}
-                    />
-                    {/* <TextInput
-                        label='Service Account'
+                        label='Account Name'
                         mode='outlined'
                         style={styles.textInput}
                         value={this.state.serviceAccount}
                         onChangeText={serviceAccount => this.setState({ serviceAccount })}
-                    /> */}
+                    />
                     <TextInput
-                        label='Service Key'
+                        label='Service Secret'
                         mode='outlined'
                         multiline={true}
                         numberOfLines={4}
                         style={styles.textInput}
-                        value={this.state.serviceKey}
-                        onChangeText={serviceKey => this.setState({ serviceKey })}
+                        value={this.state.serviceSecret}
+                        onChangeText={serviceSecret => this.setState({ serviceSecret })}
                     />
                 </Card.Content>
                 <Card.Actions>
