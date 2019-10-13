@@ -12,7 +12,7 @@ import {
 } from 'react-native-paper';
 
 import { ServiceCodeCard, AddServiceManual } from '../../components';
-import { getServices, getOTP } from '../../utils';
+import { getServices, getOTP, getCurrentCountDown } from '../../utils';
 import { colors } from '../../styles';
 
 class HomeScreen extends Component {
@@ -24,11 +24,12 @@ class HomeScreen extends Component {
     };
 
     updateOTPs = () => {
-        const servicesWithOTP = this.state.services;
-        servicesWithOTP.map((service) => {
-            return Object.assign(service, { otp: getOTP({ secret: service.secret }) } );
+        const { services } = this.state;
+        const countDown = getCurrentCountDown();
+        services.map((service) => {
+            return Object.assign(service, { otp: getOTP({ secret: service.secret }), countDown } );
         })
-        this.setState({ services: servicesWithOTP });
+        this.setState({ services });
     }
 
     async componentDidMount() {
