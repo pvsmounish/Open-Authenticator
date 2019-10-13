@@ -89,8 +89,8 @@ class HomeScreen extends Component {
                             open={this.state.isFABOpen}
                             icon={this.state.isFABOpen ? 'close' : 'add'}
                             actions={[
-                                { icon: 'qrcode', label: 'Scan QR', onPress: () => this.props.navigation.navigate('AddServiceScan') },
-                                { icon: 'text-short', label: 'Type', onPress: () => this.showAddServiceManualModel() },
+                                { icon: 'add', label: 'Scan QR', onPress: () => this.props.navigation.navigate('AddServiceScan') },
+                                { icon: 'add', label: 'Type', onPress: () => this.showAddServiceManualModel() },
                             ]}
                             onStateChange={({ open }) => this.setState({ isFABOpen: open })}
                             onPress={() => {
